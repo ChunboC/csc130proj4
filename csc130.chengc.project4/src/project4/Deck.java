@@ -59,6 +59,10 @@ public class Deck {
 		return null;
 	}
 	
+	public int size() {
+		return cards.size();
+	}
+	
 	/**
 	 * Returns <i>true</i> if the Deck is empty
 	 * @return Returns <i>true</i> if the Deck is empty, <i>false</i> otherwise

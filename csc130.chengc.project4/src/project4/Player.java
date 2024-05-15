@@ -80,6 +80,17 @@ public class Player {
 	 * @return the number of books the player has
 	 */
 	public int getPoints() {
+		Hand tempHand = new Hand();
+		tempHand.insertHand(hand.getHand());
+		if (hand.evaluate() == 1) {
+			points += 1;
+			for (GoFishCard card : tempHand.getHand()) {
+				if (!hand.getHand().contains(card)) {
+					System.out.println("Book: " + tempHand.getCards(card.getRank()));
+					break;
+				}
+			}
+		}
 		return points;
 	}
 
@@ -159,6 +170,7 @@ public class Player {
 	 * @return - the Linked List of cards
 	 */
 	public LinkedList<GoFishCard> getCard(int rank) {
-		return hand.findRank(rank);
+		LinkedList<GoFishCard> foundCards = hand.findRank(rank);
+		return foundCards;
 	}
 }
