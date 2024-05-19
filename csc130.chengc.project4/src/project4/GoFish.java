@@ -52,7 +52,8 @@ public class GoFish {
 			}	
 			me.getPoints();
 			System.out.println(me);
-			System.out.println(deck);
+			if (me.getTotalCards() == 0)
+				break;
 			// computer's automatic turn
 			System.out.println("***************************************************************");
 			System.out.println(computer);
@@ -70,6 +71,8 @@ public class GoFish {
 			}	
 			computer.getPoints();
 			System.out.println(computer);
+			if (computer.getTotalCards() == 0)
+				break;
 		}
 		gameResults();
 	}
